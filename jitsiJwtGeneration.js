@@ -6,7 +6,7 @@ exports.generateJitsiJwt = function(roomId, user) {
   return jwt.sign({
     iss: "appName",
     aud: "appName",
-    sub: process.env.JITSI_URL,
+    sub: "meet.example.com",
     room: roomId,
     exp: expiry.valueOf(),
     context: {
@@ -17,5 +17,7 @@ exports.generateJitsiJwt = function(roomId, user) {
         affiliation: user.moderator === true ? "owner" : "member",
       }
     },
+
+  // The value of the secret below should match the one in your Prosody configuration file
   }, process.env.JITSI_SECRET);
 }
