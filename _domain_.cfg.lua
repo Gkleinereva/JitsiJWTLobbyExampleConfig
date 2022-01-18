@@ -33,7 +33,7 @@ VirtualHost "meet.example.com"
     authentication = "token"
     -- Properties below are modified by jitsi-meet-tokens package config
     -- and authentication above is switched to "token"
-    app_id = "gneus"
+    app_id = "appName"
     app_secret = "<appSecret>"
     allow_empty_token = false
     -- Assign this host a certificate for TLS, otherwise it would use the one
@@ -58,7 +58,7 @@ VirtualHost "meet.example.com"
         "muc_lobby_rooms";
         "muc_breakout_rooms";
         "av_moderation";
-	"presence_identity";
+	    "presence_identity";
     }
     c2s_require_encryption = false
     lobby_muc = "lobby.meet.example.com"
@@ -78,7 +78,7 @@ Component "conference.meet.example.com" "muc"
         "muc_domain_mapper";
         "polls";
         "token_verification";
-	"token_affiliation";
+	    "token_affiliation";
         "muc_rate_limit";
     }
     admins = { "focus@auth.meet.example.com" }
